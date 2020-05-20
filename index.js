@@ -113,10 +113,12 @@ function getAverageGoals( homegoals, awaygoals ) {
         return `home team goals ${Math.round(homegoals)}- match, Away Team Goals ${Math.round(awaygoals)}-match`;
 };
 const hometeamGoals = fifaData.reduce(function(datas, item, match){
-        return datas + item["Home Team Goals"] / 850;
+    match = 850;
+        return datas + item["Home Team Goals"] / match;
 },0);
 const awayTeamGoals = fifaData.reduce(function(datas, item, match){
-    return datas + item["Away Team Goals"] / 850 ;
+    match = 850;
+    return datas + item["Away Team Goals"] / match ;
 },0);   
 
 console.log(getAverageGoals(hometeamGoals, awayTeamGoals));
